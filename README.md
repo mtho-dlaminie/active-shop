@@ -1,16 +1,17 @@
 **Active-Shop Api version 1** 
-REST API to purchase momentum active shop products using “Active Days” points. 
+REST API to purchase momentum active shop products using Active Days points. 
 
-## Requirements
+**Requirements**
 
 For building and running the application you need:
 
-- [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Maven 3](https://maven.apache.org)
+- At least Java 8
+- Maven 3
 
 **NB**
+Eclicpe/STS will also required Lombok plugin installation https://projectlombok.org/download.
 IntelliJ Lombok plugin is required to build project.
-Eclicpe/STS will also required Lombok plugin installation https://projectlombok.org/download
+
 
 **Build**
 
@@ -43,58 +44,48 @@ Request:
 Response:
 
 `[
-   {
-     "name": "Hatlam",
-     "code": 1,
-     "points": 10
-   },
-   {
-     "name": "Phys Fintone",
-     "code": 2,
-     "points": 20
-   },
-   {
-     "name": "New-Sing",
-     "code": 3,
-     "points": 30
-   },
-   {
-     "name": "Biolam",
-     "code": 4,
-     "points": 40
-   },
-   {
-     "name": "Kanstock",
-     "code": 5,
-     "points": 50
-   }
- ]`
+    {
+        "name": "Burger",
+        "code": 1,
+        "points": 40
+    },
+    {
+        "name": "Chicken fillet",
+        "code": 2,
+        "points": 40
+    },
+    {
+        "name": "Sippy Sherbet",
+        "code": 3,
+        "points": 20
+    },
+    {
+        "name": "Sparkling Water",
+        "code": 4,
+        "points": 5
+    }
+]`
  
  Request:
  
  `GET v1/1/purchase-product`
  
- `curl -X POST "http://localhost:8080/active-shop-api/v1/1/purchase-product" -H "accept: */*" -H "Content-Type: application/json" -d "[ { \"name\": \"Hatlam\", \"code\": 1, \"points\": 10 }, { \"name\": \"Phys Fintone\", \"code\": 2, \"points\": 20 }, { \"name\": \"New-Sing\", \"code\": 3, \"points\": 30 }]"`
+ `curl -X POST "http://localhost:8080/active-shop-api/v1/1/purchase-product" -H "accept: */*" -H "Content-Type: application/json" -d "[ { \"name\": \"Burger\", \"code\": 1, \"points\": 40 }, { \"name\": \"Chicken fillet\", \"code\": 2, \"points\": 40 }]"`
  
  Response:
  
  `[
     {
-      "name": "Hatlam",
-      "code": 1,
-      "points": 10
+        "name": "Burger",
+        "code": 1,
+        "points": 40
     },
     {
-      "name": "Phys Fintone",
-      "code": 2,
-      "points": 20
-    },
-    {
-      "name": "New-Sing",
-      "code": 3,
-      "points": 30
+        "name": "Chicken fillet",
+        "code": 2,
+        "points": 40
     }
-  ]`
+]`
   
   **Dependencies**
   
@@ -111,7 +102,7 @@ Response:
 
 **Monitoring**
 
-Prometheus (vanilla config)
+Prometheus
 
 `http://localhost:8080/active-shop-api/actuator`
    
