@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @ControllerAdvice
-public class ActiveShoppeExceptionHandler extends ResponseEntityExceptionHandler {
+public class ActiveShopExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ActiveShopResourceNotFoundException.class)
     public void springHandleNotFound(HttpServletResponse response) throws IOException {
         response.sendError(HttpStatus.NOT_FOUND.value());
